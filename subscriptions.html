@@ -95,12 +95,6 @@
                             } else {
                                 alert("compass API not supported");
                             };
-                            function vibrate() {
-                                if ("vibrate" in navigator) {
-                                    window.navigator.vibrate(100);
-                                }
-                                else alert("Vibration API not supported!");
-                            }
                             function deviceOrientationHandler(tiltLR, tiltFB, dir) {
                                 var curstate = 0;
                                 var wrongdir = 0;
@@ -114,21 +108,16 @@
                                     $('#comp-arrow').css('filter','hue-rotate(240deg)');
                                     $('#cuecard').removeClass('alert-success').addClass('alert-danger');
                                     $('#main-message').replaceWith('<h2 class="c-white" id="main-message">Wrong way!</h2>');
-                                    $('#sec-message').hide();
-                                    wrongdir = 1;
+                                    $('#sec-message').html('Turn around');
+                                    window.navigator.vibrate([100, 10000]);
                                 }
                                 else {
                                     $('#comp-arrow').css('filter','hue-rotate(0deg)');
                                     $('#cuecard').removeClass('alert-danger').addClass('alert-success');
                                     $('#main-message').replaceWith('<h2 class="c-white" id="main-message">Next: <span id="exit"> 10th street exit</span></h2>');
-                                    $('#sec-message').show();
-                                    wrongdir = 0;
+                                    $('#sec-message').html('Going to <span id="place">Georgia Tech</span>');
                                 }
-                                if(curstate!=wrongdir) vibrate();
-                                curstate=wrongdir;
-
                             }
-
                         });
                     </script>
                     <div class="compass">
@@ -139,7 +128,7 @@
             </div>
         </div>
     </section>
-
+    <button class="btn btn-float waves-effect bgm-red" type="submit" data-toggle="tooltip" data-placement="top" data-original-title="List" style="right:20; bottom:20;"><i class="md md-equalizer"></i></button>
     <footer id="footer" class="card-body" style="position:fixed"></footer>
 
     <!-- Older IE warning message -->
