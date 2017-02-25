@@ -24,6 +24,11 @@ summary {
     display: block
 }
 
+.whitetext{
+  color: white;
+  font-size: 1.7em;
+}
+
 .login-title {
     text-shadow: 2px 2px 10px rgba(100,100,100,0.7);
 }
@@ -254,6 +259,16 @@ th {
     }
     .navbar {
         display: none
+    }
+
+    form{
+      margin: 0 auto;
+      width: 250px;
+    text-align: center;
+    }
+    .centerthis{
+padding: inherit;
+      text-align: center;
     }
     .btn>.caret,
     .dropup>.btn>.caret {
@@ -10708,11 +10723,11 @@ only screen and (min-resolution: 2dppx) {
 }
 /*!
  * Waves v0.6.0
- * http://fian.my.id/Waves 
- * 
- * Copyright 2014 Alfiana E. Sibuea and other contributors 
- * Released under the MIT license 
- * https://github.com/fians/Waves/blob/master/LICENSE 
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
+ * https://github.com/fians/Waves/blob/master/LICENSE
  */
 
 .waves-effect {
@@ -11299,7 +11314,7 @@ body #content {
     }
 }
 #header {
-    background: #03b388;
+    background: #3E78DA;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     height: 65px;
     position: fixed;
@@ -12495,8 +12510,8 @@ only screen and (min-resolution: 2dppx) {
 
 .mini-card, .mini-charts>div>div>div, .dash-widget-item, #todo-lists {
     -webkit-animation-name: bounceInUp;
-    -webkit-animation-duration: 1s; 
-    animation-name: bounceInUp; 
+    -webkit-animation-duration: 1s;
+    animation-name: bounceInUp;
     animation-duration: 1s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .55);
 }
@@ -12505,8 +12520,8 @@ only screen and (min-resolution: 2dppx) {
     background: #fff;
     margin-bottom: 30px;
     -webkit-animation-name: bounceInUp;
-    -webkit-animation-duration: 1s; 
-    animation-name: bounceInUp; 
+    -webkit-animation-duration: 1s;
+    animation-name: bounceInUp;
     animation-duration: 1s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .55);
 }
