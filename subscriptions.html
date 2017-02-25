@@ -73,7 +73,6 @@
                     <script type="text/javascript">
                         document.addEventListener("DOMContentLoaded", function(event) {
                             if (window.DeviceOrientationEvent) {
-                                document.getElementById("notice").innerHTML = "Gaaf! De DeviceOrientationEvent API word door dit toestel ondersteund.";
                                 window.addEventListener('deviceorientation', function(eventData) {
                                     // gamma: Tilting the device from left to right. Tilting the device to the right will result in a positive value.
                                     var tiltLR = eventData.gamma;
@@ -82,20 +81,16 @@
                                     var tiltFB = eventData.beta;
 
                                     // alpha: The direction the compass of the device aims to in degrees.
-                                    var dir = eventData.alpha
+                                    var dir = eventData.alpha;
 
                                     // Call the function to use the data on the page.
                                     deviceOrientationHandler(tiltLR, tiltFB, dir);
                                 }, false);
                             } else {
-                                alert("compass API not supported")
+                                alert("compass API not supported");
                             };
 
                             function deviceOrientationHandler(tiltLR, tiltFB, dir) {
-                                document.getElementById("tiltLR").innerHTML = Math.ceil(tiltLR);
-                                document.getElementById("tiltFB").innerHTML = Math.ceil(tiltFB);
-                                document.getEAlementById("direction").innerHTML = Math.ceil(dir);
-
                                 // Rotate the disc of the compass.
                                 var compassDisc = document.getElementById("comp-arrow");
                                 compassDisc.style.webkitTransform = "rotate("+ dir +"deg)";
