@@ -15276,7 +15276,7 @@ html:not(.ie9) .select.fg-line:before {
     box-shadow: 0 0 5px rgba(33, 150, 243, .5)
 }
 .growl-animated.alert-success {
-    background: rgba(76, 175, 80, .8);
+    background: #4CAF50;
     box-shadow: 0 0 5px rgba(76, 175, 80, .5)
 }
 .growl-animated.alert-warning {
