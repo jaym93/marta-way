@@ -3,169 +3,108 @@
 
 <!-- Mirrored from byrushan.com/projects/ma/v1-2/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 May 2015 11:54:28 GMT -->
 <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>MARTA Way</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MARTA Way</title>
 
-        <!-- Vendor CSS -->
-        <link href="vendors/fullcalendar/fullcalendar.css" rel="stylesheet">
-        <link href="vendors/animate-css/animate.min.css" rel="stylesheet">
-        <link href="vendors/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+    <!-- Vendor CSS -->
+    <link href="vendors/fullcalendar/fullcalendar.css" rel="stylesheet">
+    <link href="vendors/animate-css/animate.min.css" rel="stylesheet">
+    <link href="vendors/sweet-alert/sweet-alert.min.css" rel="stylesheet">
 
-        <!-- CSS -->
-        <link href="css/app.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link href="css/app.min.css" rel="stylesheet">
 
-    </head>
-    <body>
-        <header id="header">
-            <ul class="header-inner">
-                <li id="menu-trigger" data-trigger="#sidebar">
-                    <div class="line-wrap">
-                        <div class="line top"></div>
-                        <div class="line center"></div>
-                        <div class="line bottom"></div>
-                    </div>
+</head>
+<body>
+    <header id="header">
+        <ul class="header-inner">
+            <li id="menu-trigger" data-trigger="#sidebar">
+                <div class="line-wrap">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+            <li class="whitetext">
+              <img src="img/marta_logo.png" alt="marta" style="resize:both; height:40px;">
+          </li>
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="tm-settings" href="#"></a>
+            <ul class="dropdown-menu dm-icon pull-right">
+                <li>
+                    <a data-action="fullscreen" href="#"><i class="md md-fullscreen"></i> Toggle Fullscreen</a>
                 </li>
-
-                <li class="whitetext">
-
-                                      <img src="img/marta_logo.png" alt="marta" style="resize:both; height:40px;">
-                                                  </li>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="tm-settings" href="#"></a>
-                        <ul class="dropdown-menu dm-icon pull-right">
-                            <li>
-                                <a data-action="fullscreen" href="#"><i class="md md-fullscreen"></i> Toggle Fullscreen</a>
-                            </li>
-                            <li>
-                                <a data-action="clear-localstorage" href="#"><i class="md md-delete"></i> Clear Local Storage</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="md md-person"></i> Privacy Settings</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="md md-settings"></i> Other Settings</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
-                        <a class="tm-chat" href="#"></a>
-                    </li>
-                    </ul>
+                <li>
+                    <a data-action="clear-localstorage" href="#"><i class="md md-delete"></i> Clear Local Storage</a>
+                </li>
+                <li>
+                    <a href="#"><i class="md md-person"></i> Privacy Settings</a>
+                </li>
+                <li>
+                    <a href="#"><i class="md md-settings"></i> Other Settings</a>
                 </li>
             </ul>
-
-            <!-- Top Search Content -->
-            <div id="top-search-wrap">
-                <input type="text">
-                <i id="top-search-close">&times;</i>
+        </li>
+        <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
+            <a class="tm-chat" href="#"></a>
+        </li>
+    </ul>
+    <!-- Top Search Content -->
+    <div id="top-search-wrap">
+        <input type="text">
+        <i id="top-search-close">&times;</i>
+    </div>
+</header>
+<h1 style="text-align:center">Find your way</h1>
+<section id="content">
+    <div class="container">
+        <div class="card">
+            <div class="card-header"style="text-align:center">
+                <h3>You are here:</h3>
+                <h2>Midtown Marta Station</h2>
+                <br/>
+                <form>
+                    <h3>Where do you want to go?</h3>
+                    <input type="text" name="destination">
+                </form>
+                <br/>
+                <h3>Do you want to use elevators?</h3>
+                <form>
+                    <input type="radio" name="elevator" value="elevator" checked> Yes<br>
+                    <input type="radio" name="elevator" value="escalator"> No<br>
+                </form>
+                <br />
+                <a href="directions-m.html"><button style="background-color:#EA7009; width: 100%; height:60px; font-size:2em" class="btn btn-info waves-effect">Go</button></a>
             </div>
-        </header>
+        </div>
+    </div>
+</section>
 
-                    <section id="content">
-                        <div class="container">
-                            <div class="card">
-                                <div class="card-header"style="text-align:center">
-                                    <h3>Your Location:</h3>
-                                      <p>Midtown Marta Station</p>
-                                      <form>
-                                        <strong style="font-size:1.5em">Destination:</strong><br />
-                                        <input type="text" name="destination"
-                                      </form>
+<!-- Javascript Libraries -->
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="vendors/flot/jquery.flot.min.js"></script>
+<script src="vendors/flot/jquery.flot.resize.min.js"></script>
+<script src="vendors/flot/plugins/curvedLines.js"></script>
+<script src="vendors/sparklines/jquery.sparkline.min.js"></script>
+<script src="vendors/easypiechart/jquery.easypiechart.min.js"></script>
+<script src="vendors/fullcalendar/lib/moment.min.js"></script>
+<script src="vendors/fullcalendar/fullcalendar.min.js"></script>
+<script src="vendors/simpleWeather/jquery.simpleWeather.min.js"></script>
+<script src="vendors/auto-size/jquery.autosize.min.js"></script>
+<script src="vendors/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="vendors/waves/waves.min.js"></script>
+<script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+<script src="vendors/sweet-alert/sweet-alert.min.js"></script>
+<script src="js/flot-charts/curved-line-chart.js"></script>
+<script src="js/flot-charts/line-chart.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/functions.js"></script>
 
-                                      <h4>Use elevators?</h4>
-                                      <form>
-                                        <input type="radio" name="elevator" value="male" checked> Yes<br>
-     <input type="radio" name="elevator" value="stairs"> No<br>
-                                      </form>
-                                </div>
-                            </div>
+</body>
 
-<a href="directionpage"><button style="background-color:#EA7009; width: 100%; height:100px; font-size:2em" class="btn btn-info waves-effect">Go</button></a>
-
-
-</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-
-                <!-- Older IE warning message -->
-                <!--[if lt IE 9]>
-                    <div class="ie-warning">
-                        <h1 class="c-white">IE SUCKS!</h1>
-                        <p>You are using an outdated version of Internet Explorer, upgrade to any of the following web browser <br/>in order to access the maximum functionality of this website. </p>
-                        <ul class="iew-download">
-                            <li>
-                                <a href="http://www.google.com/chrome/">
-                                    <img src="img/browsers/chrome.png" alt="">
-                                    <div>Chrome</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                                    <img src="img/browsers/firefox.png" alt="">
-                                    <div>Firefox</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://www.opera.com">
-                                    <img src="img/browsers/opera.png" alt="">
-                                    <div>Opera</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.apple.com/safari/">
-                                    <img src="img/browsers/safari.png" alt="">
-                                    <div>Safari</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                                    <img src="img/browsers/ie.png" alt="">
-                                    <div>IE (New)</div>
-                                </a>
-                            </li>
-                        </ul>
-                        <p>Upgrade your browser for a Safer and Faster web experience. <br/>Thank you for your patience...</p>
-                    </div>
-                <![endif]-->
-
-                <!-- Javascript Libraries -->
-                <script src="js/jquery-2.1.1.min.js"></script>
-                <script src="js/bootstrap.min.js"></script>
-
-                <script src="vendors/flot/jquery.flot.min.js"></script>
-                <script src="vendors/flot/jquery.flot.resize.min.js"></script>
-                <script src="vendors/flot/plugins/curvedLines.js"></script>
-                <script src="vendors/sparklines/jquery.sparkline.min.js"></script>
-                <script src="vendors/easypiechart/jquery.easypiechart.min.js"></script>
-
-                <script src="vendors/fullcalendar/lib/moment.min.js"></script>
-                <script src="vendors/fullcalendar/fullcalendar.min.js"></script>
-                <script src="vendors/simpleWeather/jquery.simpleWeather.min.js"></script>
-                <script src="vendors/auto-size/jquery.autosize.min.js"></script>
-                <script src="vendors/nicescroll/jquery.nicescroll.min.js"></script>
-                <script src="vendors/waves/waves.min.js"></script>
-                <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
-                <script src="vendors/sweet-alert/sweet-alert.min.js"></script>
-
-                <script src="js/flot-charts/curved-line-chart.js"></script>
-                <script src="js/flot-charts/line-chart.js"></script>
-                <script src="js/charts.js"></script>
-
-                <script src="js/charts.js"></script>
-                <script src="js/functions.js"></script>
-
-
-
-            </body>
-
-        <!-- Mirrored from byrushan.com/projects/ma/v1-2/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 May 2015 11:54:28 GMT -->
-        </html>
+<!-- Mirrored from byrushan.com/projects/ma/v1-2/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 May 2015 11:54:28 GMT -->
+</html>
