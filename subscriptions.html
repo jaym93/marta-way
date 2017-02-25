@@ -1,0 +1,196 @@
+﻿
+<!DOCTYPE html>
+<html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal :: Subscriptions</title>
+
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+
+    <!-- Vendor CSS -->
+    <link href="vendors/fullcalendar/fullcalendar.css" rel="stylesheet">
+    <link href="vendors/animate-css/animate.min.css" rel="stylesheet">
+    <link href="vendors/sweet-alert/sweetalert2.css" rel="stylesheet" />
+    <link href="vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/app.min.css" rel="stylesheet">
+
+    <!--jQuery-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/template.js"></script>
+
+</head>
+<body onload="getTemplate();">
+    <header id="header" onmouseover="$('#subscriptions_link').addClass('active');"></header>
+    <section id="main"></section>
+    <section id="content">
+        <div class="container">
+            <div class="block-header">
+                <h2>Subscriptions</h2>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Per application subscriptions <small>Select the applications you want to recieve updates about, you will get a separate email for each</small></h2>
+                </div>
+                <div class="card-body">
+                    <style type="text/css">
+                        .table-responsive > table > thead > tr > th {
+                            width: 12.5%;
+                            font-size: 16px;
+                            background-color: #e0e0f0;
+                        }
+
+                        .table-responsive > table > tbody > tr > td {
+                            text-align: center;
+                            padding: 20px;
+                        }
+                    </style>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" style="text-wrap:avoid">
+                            <thead>
+                                <tr>
+                                    <th>Summary</th>
+                                    <th>Audit</th>
+                                    <th>Binder</th>
+                                    <th>Dashboard</th>
+                                    <th>Know</th>
+                                    <th>MyCoach</th>
+                                    <th>Order</th>
+                                    <th>SEApps</th>
+                                    <th>VisitNG</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="toggle-switch" data-ts-color="amber"><input id="sub-overall" type="checkbox" hidden="hidden"><label for="sub-overall" class="ts-helper"></label></div></td>
+                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-audit" type="checkbox" hidden="hidden"><label for="sub-audit" class="ts-helper"></label></div></td>
+                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-binder" type="checkbox" hidden="hidden"><label for="sub-binder" class="ts-helper"></label></div></td>
+                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-dashboard" type="checkbox" hidden="hidden"><label for="sub-dashboard" class="ts-helper"></label></div></td>
+                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-know" type="checkbox" hidden="hidden"><label for="sub-know" class="ts-helper"></label></div></td>
+                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-mycoach" type="checkbox" hidden="hidden"><label for="sub-mycoach" class="ts-helper"></label></div></td>
+                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-order" type="checkbox" hidden="hidden"><label for="sub-order" class="ts-helper"></label></div></td>
+                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-seapps" type="checkbox" hidden="hidden"><label for="sub-seapps" class="ts-helper"></label></div></td>
+                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-visit" type="checkbox" hidden="hidden"><label for="sub-visit" class="ts-helper"></label></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-lg bgm-indigo waves-effect" type="button" onclick="" style="float:right;margin:10px;"><i class="md md-save">&nbsp;</i>Save changes</button>
+                        <button class="btn btn-lg bgm-red waves-effect" type="button" onclick="$('input:checkbox').not('#tw-switch').removeAttr('checked');" style="float:right;margin:10px;"><i class="md md-cancel">&nbsp;</i>Unsubscribe from all</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="card-body" style="position:fixed"></footer>
+
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+        <div class="ie-warning">
+            <h1 class="c-white">IE SUCKS!</h1>
+            <p>You are using an outdated version of Internet Explorer, upgrade to any of the following web browser <br/>in order to access the maximum functionality of this website. </p>
+            <ul class="iew-download">
+                <li>
+                    <a href="http://www.google.com/chrome/">
+                        <img src="img/browsers/chrome.png" alt="">
+                        <div>Chrome</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.mozilla.org/en-US/firefox/new/">
+                        <img src="img/browsers/firefox.png" alt="">
+                        <div>Firefox</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.opera.com">
+                        <img src="img/browsers/opera.png" alt="">
+                        <div>Opera</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.apple.com/safari/">
+                        <img src="img/browsers/safari.png" alt="">
+                        <div>Safari</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                        <img src="img/browsers/ie.png" alt="">
+                        <div>IE (New)</div>
+                    </a>
+                </li>
+            </ul>
+            <p>Upgrade your browser for a Safer and Faster web experience. <br/>Thank you for your patience...</p>
+        </div>
+    <![endif]-->
+    <!-- Javascript Libraries -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="vendors/auto-size/jquery.autosize.min.js"></script>
+    <script src="vendors/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="vendors/waves/waves.min.js"></script>
+    <script src="vendors/sweet-alert/sweetalert2.min.js"></script>
+
+    <script src="js/functions.js"></script>
+
+    <script src="vendors/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="vendors/bootgrid/jquery.bootgrid.min.js"></script>
+
+    <!-- Data Table -->
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //Basic Example
+            $("#data-table-basic").bootgrid({
+                css: {
+                    icon: 'md icon',
+                    iconColumns: 'md-view-module',
+                    iconDown: 'md-expand-more',
+                    iconRefresh: 'md-refresh',
+                    iconUp: 'md-expand-less'
+                },
+            });
+
+            //Selection
+            $("#data-table-selection").bootgrid({
+                css: {
+                    icon: 'md icon',
+                    iconColumns: 'md-view-module',
+                    iconDown: 'md-expand-more',
+                    iconRefresh: 'md-refresh',
+                    iconUp: 'md-expand-less'
+                },
+                selection: true,
+                multiSelect: true,
+                rowSelect: true,
+                keepSelection: true
+            });
+
+            //Command Buttons
+            $("#data-table-command").bootgrid({
+                css: {
+                    icon: 'md icon',
+                    iconColumns: 'md-view-module',
+                    iconDown: 'md-expand-more',
+                    iconRefresh: 'md-refresh',
+                    iconUp: 'md-expand-less'
+                },
+                formatters: {
+                    "commands": function (column, row) {
+                        return "<button type=\"button\" class=\"btn btn-icon command-edit\" data-row-id=\"" + row.id + "\"><span class=\"md md-edit\"></span></button> " +
+                            "<button type=\"button\" class=\"btn btn-icon command-delete\" data-row-id=\"" + row.id + "\"><span class=\"md md-delete\"></span></button>";
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
