@@ -20,18 +20,42 @@
 <body>
     <header id="header">
         <ul class="header-inner">
+            <li id="menu-trigger" data-trigger="#sidebar">
+                <div class="line-wrap">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
             <li class="whitetext">
-            <img src="img/marta_logo.png" alt="marta" style="resize:both; height:40px;">
+              <img src="img/marta_logo.png" alt="marta" style="resize:both; height:40px;">
           </li>
-<li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
-    <a class="tm-chat" href="#"></a>
-</li>
-</ul>
-<!-- Top Search Content -->
-<div id="top-search-wrap">
-    <input type="text">
-    <i id="top-search-close">&times;</i>
-</div>
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="tm-settings" href="#"></a>
+            <ul class="dropdown-menu dm-icon pull-right">
+                <li>
+                    <a data-action="fullscreen" href="#"><i class="md md-fullscreen"></i> Toggle Fullscreen</a>
+                </li>
+                <li>
+                    <a data-action="clear-localstorage" href="#"><i class="md md-delete"></i> Clear Local Storage</a>
+                </li>
+                <li>
+                    <a href="#"><i class="md md-person"></i> Privacy Settings</a>
+                </li>
+                <li>
+                    <a href="#"><i class="md md-settings"></i> Other Settings</a>
+                </li>
+            </ul>
+        </li>
+        <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
+            <a class="tm-chat" href="#"></a>
+        </li>
+    </ul>
+    <!-- Top Search Content -->
+    <div id="top-search-wrap">
+        <input type="text">
+        <i id="top-search-close">&times;</i>
+    </div>
 </header>
 <h1 style="text-align:center">Find your way</h1>
 <section id="content">

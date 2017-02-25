@@ -19,50 +19,44 @@
 
 </head>
 <body onload="timedText()">
-<header id="header">
-    <ul class="header-inner">
-        <li id="menu-trigger" data-trigger="#sidebar">
-            <div class="line-wrap">
-                <div class="line top"></div>
-                <div class="line center"></div>
-                <div class="line bottom"></div>
-            </div>
+    <header id="header">
+        <ul class="header-inner">
+            <li id="menu-trigger" data-trigger="#sidebar">
+                <div class="line-wrap">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+            <li class="whitetext">
+              <img src="img/marta_logo.png" alt="marta" style="resize:both; height:40px;">
+          </li>
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="tm-settings" href="#"></a>
+            <ul class="dropdown-menu dm-icon pull-right">
+                <li>
+                    <a data-action="fullscreen" href="#"><i class="md md-fullscreen"></i> Toggle Fullscreen</a>
+                </li>
+                <li>
+                    <a data-action="clear-localstorage" href="#"><i class="md md-delete"></i> Clear Local Storage</a>
+                </li>
+                <li>
+                    <a href="#"><i class="md md-person"></i> Privacy Settings</a>
+                </li>
+                <li>
+                    <a href="#"><i class="md md-settings"></i> Other Settings</a>
+                </li>
+            </ul>
         </li>
-        <li class="whitetext">
-          <img src="img/marta_logo.png" alt="marta" style="resize:both; height:40px;">
-      </li>
-  </div>
-</div>
-</li>
-<li class="dropdown">
-    <a data-toggle="dropdown" class="tm-settings" href="#"></a>
-    <ul class="dropdown-menu dm-icon pull-right">
-        <li>
-            <a data-action="fullscreen" href="#"><i class="md md-fullscreen"></i> Toggle Fullscreen</a>
-        </li>
-        <li>
-            <a data-action="clear-localstorage" href="#"><i class="md md-delete"></i> Clear Local Storage</a>
-        </li>
-        <li>
-            <a href="#"><i class="md md-person"></i> Privacy Settings</a>
-        </li>
-        <li>
-            <a href="#"><i class="md md-settings"></i> Other Settings</a>
+        <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
+            <a class="tm-chat" href="#"></a>
         </li>
     </ul>
-</li>
-<li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
-    <a class="tm-chat" href="#"></a>
-</li>
-</ul>
-</li>
-</ul>
-
-<!-- Top Search Content -->
-<div id="top-search-wrap">
-    <input type="text">
-    <i id="top-search-close">&times;</i>
-</div>
+    <!-- Top Search Content -->
+    <div id="top-search-wrap">
+        <input type="text">
+        <i id="top-search-close">&times;</i>
+    </div>
 </header>
 <section id="main">
     <section id="content">
@@ -71,7 +65,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-header">
-                            <h2> From: Current Location </h2>
+                            <h2> From: Midtown Marta Station </h2>
                             <br/>
                             <h2> To: Exit B </h2>
                         </ul>
@@ -91,23 +85,23 @@
                                 </tr>
                                 <tr>
                                     <td><i class="fa fa-arrow-circle-right" style="font-size:24px" id="step2"></i></td>
-                                    <td id="step11">Turn right to arrive at the elevator </td>
+                                    <td id="step12">Turn right to arrive at the elevator </td>
                                 </tr>
                                 <tr>
                                     <td><i class="fa  fa-angle-double-up" style="font-size:24px" id="step3"></i></td>
-                                    <td id="step11">Take the elevator up to the second floor</td>
+                                    <td id="step13">Take the elevator up to the second floor</td>
                                 </tr>
                                 <tr>
                                     <td><i class="fa fa-arrow-circle-left" style="font-size:24px" id="step4"></i></td>
-                                    <td id="step11">Head left as you exit the elevator at Exit B</td>
+                                    <td id="step14">Head left as you exit the elevator at Exit B</td>
                                 </tr>
                                 <tr>
                                     <td><i class="fa fa-arrow-circle-up" style="font-size:24px" id="step5"></i></td>
-                                    <td id="step11">Head straight towards the turnstiles</td>
+                                    <td id="step15">Head straight towards the turnstiles</td>
                                 </tr>
                                 <tr>
                                     <td><i class="fa fa-map-pin" style="font-size:24px" id="step6"></i></td>
-                                    <td id="step11">Exit the station to arrive at Peachtree Place NE</td>
+                                    <td id="step16">Exit the station to arrive at Peachtree Place NE</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -120,57 +114,63 @@
 </section>
 </body>
 
-    <!-- Javascript Libraries -->
-    <script src="js/jquery-2.1.1.min.js"></script>
-    <script>
-        function timedText() {
-            setTimeout(myTimeout1, 2000) 
-            setTimeout(myTimeout2, 4000) 
-            setTimeout(myTimeout3, 6000) 
-            setTimeout(myTimeout4, 8000) 
-            setTimeout(myTimeout5, 9000) 
-            setTimeout(myTimeout6, 10000) 
-        }
-        function myTimeout1() {
-            document.getElementById("step1").style.color = "green";
-        }
-        function myTimeout2() {
-            document.getElementById("step2").style.color = "green";
-        }
-        function myTimeout3() {
-            document.getElementById("step3").style.color = "green";
-        }
-        function myTimeout4() {
-            document.getElementById("step4").style.color = "green";
-        }
-        function myTimeout5() {
-            document.getElementById("step5").style.color = "green";
-        }
-        function myTimeout6() {
-            document.getElementById("step6").style.color = "green";
-        }
-    </script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="vendors/flot/jquery.flot.min.js"></script>
-    <script src="vendors/flot/jquery.flot.resize.min.js"></script>
-    <script src="vendors/flot/plugins/curvedLines.js"></script>
-    <script src="vendors/sparklines/jquery.sparkline.min.js"></script>
-    <script src="vendors/easypiechart/jquery.easypiechart.min.js"></script>
+<!-- Javascript Libraries -->
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+    function timedText() {
+        setTimeout(myTimeout1, 2000) 
+        setTimeout(myTimeout2, 4000) 
+        setTimeout(myTimeout3, 6000) 
+        setTimeout(myTimeout4, 8000) 
+        setTimeout(myTimeout5, 9000) 
+        setTimeout(myTimeout6, 10000) 
+    }
+    function myTimeout1() {
+        document.getElementById("step1").style.color = "green";
+        document.getElementById("step11").style.color = "green";
+    }
+    function myTimeout2() {
+        document.getElementById("step2").style.color = "green";
+        document.getElementById("step12").style.color = "green";
+    }
+    function myTimeout3() {
+        document.getElementById("step3").style.color = "green";
+        document.getElementById("step13").style.color = "green";
+    }
+    function myTimeout4() {
+        document.getElementById("step4").style.color = "green";
+        document.getElementById("step14").style.color = "green";
+    }
+    function myTimeout5() {
+        document.getElementById("step5").style.color = "green";
+        document.getElementById("step15").style.color = "green";
+    }
+    function myTimeout6() {
+        document.getElementById("step6").style.color = "green";
+        document.getElementById("step16").style.color = "green";
+    }
+</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="vendors/flot/jquery.flot.min.js"></script>
+<script src="vendors/flot/jquery.flot.resize.min.js"></script>
+<script src="vendors/flot/plugins/curvedLines.js"></script>
+<script src="vendors/sparklines/jquery.sparkline.min.js"></script>
+<script src="vendors/easypiechart/jquery.easypiechart.min.js"></script>
 
-    <script src="vendors/fullcalendar/lib/moment.min.js"></script>
-    <script src="vendors/fullcalendar/fullcalendar.min.js"></script>
-    <script src="vendors/simpleWeather/jquery.simpleWeather.min.js"></script>
-    <script src="vendors/auto-size/jquery.autosize.min.js"></script>
-    <script src="vendors/nicescroll/jquery.nicescroll.min.js"></script>
-    <script src="vendors/waves/waves.min.js"></script>
-    <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
-    <script src="vendors/sweet-alert/sweet-alert.min.js"></script>
+<script src="vendors/fullcalendar/lib/moment.min.js"></script>
+<script src="vendors/fullcalendar/fullcalendar.min.js"></script>
+<script src="vendors/simpleWeather/jquery.simpleWeather.min.js"></script>
+<script src="vendors/auto-size/jquery.autosize.min.js"></script>
+<script src="vendors/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="vendors/waves/waves.min.js"></script>
+<script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+<script src="vendors/sweet-alert/sweet-alert.min.js"></script>
 
-    <script src="js/flot-charts/curved-line-chart.js"></script>
-    <script src="js/flot-charts/line-chart.js"></script>
-    <script src="js/charts.js"></script>
+<script src="js/flot-charts/curved-line-chart.js"></script>
+<script src="js/flot-charts/line-chart.js"></script>
+<script src="js/charts.js"></script>
 
-    <script src="js/charts.js"></script>
-    <script src="js/functions.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/functions.js"></script>
 </body>
 </html>
