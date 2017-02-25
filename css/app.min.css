@@ -11299,7 +11299,7 @@ body #content {
     }
 }
 #header {
-    background: #03b388;
+    background: #333333;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     height: 65px;
     position: fixed;
@@ -11750,7 +11750,7 @@ only screen and (min-resolution: 2dppx) {
     height: calc(100% - 65px);
     -webkit-transform: translate3d(-250px, 0, 0);
     transform: translate3d(-250px, 0, 0);
-    z-index: 5;
+    z-index: 2500;
     width: 250px;
     overflow: hidden;
     opacity: 0;

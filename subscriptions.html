@@ -31,58 +31,84 @@
     <section id="content">
         <div class="container">
             <div class="block-header">
-                <h2>Subscriptions</h2>
+                <h2>Compass</h2>
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h2>Per application subscriptions <small>Select the applications you want to recieve updates about, you will get a separate email for each</small></h2>
+                    <h2>Follow the arrow for </h2>
                 </div>
                 <div class="card-body">
-                    <style type="text/css">
-                        .table-responsive > table > thead > tr > th {
-                            width: 12.5%;
-                            font-size: 16px;
-                            background-color: #e0e0f0;
+                    <style>
+                        .compass {
+                            position: relative;
+                            width: 300px;
+                            height: 300px;
+                            margin: 20px auto;
+                            padding: 20px;
+                            overflow: hidden;
                         }
 
-                        .table-responsive > table > tbody > tr > td {
-                            text-align: center;
-                            padding: 20px;
+                        .compass .disc {
+                            position: absolute;
+                            top: 20px;
+                            left: 20px;
+                            z-index: 200;
+                            background: url('img/compass.svg');
+                            width: 250px;
+                            height: 250px;
+                            background-size: 100%;
+                        }
+
+                        .compass .arrow {
+                            position: absolute;
+                            top: 20px;
+                            left: 20px;
+                            z-index: 1000;
+                            background: url('img/arrow.svg');
+                            width: 250px;
+                            height: 250px;
+                            background-size: 100%;
                         }
                     </style>
-                    <div class="table-responsive">
-                        <table class="table table-bordered" style="text-wrap:avoid">
-                            <thead>
-                                <tr>
-                                    <th>Summary</th>
-                                    <th>Audit</th>
-                                    <th>Binder</th>
-                                    <th>Dashboard</th>
-                                    <th>Know</th>
-                                    <th>MyCoach</th>
-                                    <th>Order</th>
-                                    <th>SEApps</th>
-                                    <th>VisitNG</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><div class="toggle-switch" data-ts-color="amber"><input id="sub-overall" type="checkbox" hidden="hidden"><label for="sub-overall" class="ts-helper"></label></div></td>
-                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-audit" type="checkbox" hidden="hidden"><label for="sub-audit" class="ts-helper"></label></div></td>
-                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-binder" type="checkbox" hidden="hidden"><label for="sub-binder" class="ts-helper"></label></div></td>
-                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-dashboard" type="checkbox" hidden="hidden"><label for="sub-dashboard" class="ts-helper"></label></div></td>
-                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-know" type="checkbox" hidden="hidden"><label for="sub-know" class="ts-helper"></label></div></td>
-                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-mycoach" type="checkbox" hidden="hidden"><label for="sub-mycoach" class="ts-helper"></label></div></td>
-                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-order" type="checkbox" hidden="hidden"><label for="sub-order" class="ts-helper"></label></div></td>
-                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-seapps" type="checkbox" hidden="hidden"><label for="sub-seapps" class="ts-helper"></label></div></td>
-                                    <td><div class="toggle-switch" data-ts-color="green"><input id="sub-visit" type="checkbox" hidden="hidden"><label for="sub-visit" class="ts-helper"></label></div></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button class="btn btn-lg bgm-indigo waves-effect" type="button" onclick="" style="float:right;margin:10px;"><i class="md md-save">&nbsp;</i>Save changes</button>
-                        <button class="btn btn-lg bgm-red waves-effect" type="button" onclick="$('input:checkbox').not('#tw-switch').removeAttr('checked');" style="float:right;margin:10px;"><i class="md md-cancel">&nbsp;</i>Unsubscribe from all</button>
-                    </div>
+                    <script type="text/javascript">
+                        document.addEventListener("DOMContentLoaded", function(event) {
+                            if (window.DeviceOrientationEvent) {
+                                document.getElementById("notice").innerHTML = "Gaaf! De DeviceOrientationEvent API word door dit toestel ondersteund.";
+                                window.addEventListener('deviceorientation', function(eventData) {
+                                    // gamma: Tilting the device from left to right. Tilting the device to the right will result in a positive value.
+                                    var tiltLR = eventData.gamma;
 
+                                    // beta: Tilting the device from the front to the back. Tilting the device to the front will result in a positive value.
+                                    var tiltFB = eventData.beta;
+
+                                    // alpha: The direction the compass of the device aims to in degrees.
+                                    var dir = eventData.alpha
+
+                                    // Call the function to use the data on the page.
+                                    deviceOrientationHandler(tiltLR, tiltFB, dir);
+                                }, false);
+                            } else {
+                                alert("compass API not supported")
+                            };
+
+                            function deviceOrientationHandler(tiltLR, tiltFB, dir) {
+                                document.getElementById("tiltLR").innerHTML = Math.ceil(tiltLR);
+                                document.getElementById("tiltFB").innerHTML = Math.ceil(tiltFB);
+                                document.getEAlementById("direction").innerHTML = Math.ceil(dir);
+
+                                // Rotate the disc of the compass.
+                                var compassDisc = document.getElementById("comp-arrow");
+                                compassDisc.style.webkitTransform = "rotate("+ dir +"deg)";
+                                compassDisc.style.MozTransform = "rotate("+ dir +"deg)";
+                                compassDisc.style.transform = "rotate("+ dir +"deg)";
+                            }
+
+                        });
+                    </script>
+                    <div class="compass">
+                        <div class="arrow" id="comp-arrow"></div>
+                        <div class="disc"></div>
+                    </div>
                 </div>
             </div>
         </div>
